@@ -1,65 +1,60 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f4f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  .bank {
-    background-color: #ffffff;
-    padding: 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 350px;
-    width: 90%;
-  }
-  .balance {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 25px;
-    color: #333333;
-  }
-  button {
-    padding: 12px 20px;
-    margin: 8px;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .deposit {
-    background-color: #4caf50;
-    color: white;
-  }
-  .deposit:hover {
-    background-color: #45a049;
-  }
-  .withdraw {
-    background-color: #f44336;
-    color: white;
-  }
-  .withdraw:hover {
-    background-color: #d32f2f;
-  }
-  @media (max-width: 480px) {
-    .bank {
-      padding: 20px;
-    }
-  
-    .balance {
-      font-size: 18px;
-    }
-  
-    button {
-      width: 100%;
-      margin: 10px 0;
-    }
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #efefef;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+}
+
+.balance {
+  font-size: 2rem;
+  font-weight: bold;
+  color: green;
+  margin-bottom: 30px;
+}
+
+.btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.deposit {
+  background-color: #28a745;
+  color: white;
+}
+
+.withdraw {
+  background-color: #dc3545;
+  color: white;
+}
