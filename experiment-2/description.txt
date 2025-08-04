@@ -1,106 +1,141 @@
-STUDENT REGISTRATION FORM TEST CASES & VALIDATIONS
+RESPONSIVE BANK TEST CASES & VALIDATIONS
+1. FIELD: Balance
+Requirement: Required to be visible on load; shows user's current available balance.
+The value should be numeric and displayed in currency format (e.g., $1000). The design must ensure the balance is styled prominently in green bold text.
 
-1. FIELD: Name
-   Requirement: Required means the field cant be empty
-   only Uppercase and Lowercase alphabets and spaces allowed (pattern = [A-Za-z\s]+)
-   + means one or more than one
-VALID INPUTS:
-    "Sujal jain"
-    "Silvester Stallone"
-INVALID INPUTS:
-    "sujal123" - Contains numbers should trigger pattern mismatch
-    "sujal_jain" - Contains underscore that is invalid character
-    "SUJAL@jain" - Contains special character
+VALID OUTPUTS:
 
-2. FIELD: Email
-    Requirement: Required means the field cant be empty
-    must follow standard email format that is example@domain.com/in
-VALID INPUTS:
-    "jainsujal340@gmail.com7@gmail.com"
-    "jain66192@gmail.co.in"
-INVALID INPUTS:
-    "sujal.jain" - Missing @ and domain
-    "sujal@.com" - Missing domain name
-    "sujal@com" - Missing . in domain
-    "sujal@domain,com" - Comma instead of dot
+$1000 – Default visible value in correct format
 
-3. FIELD: Age
-    Requirement: Required means the field cant be empty,
-    numeric means that it can only take numbers as inputs,
-    minimum age should not be less than 5 and not greater than 130
-VALID INPUTS:
-    5 - Minimum valid
-    18, 65 - Typical valid ages
-    130 - Maximum valid
-INVALID INPUTS:
-    " " (empty) - Should trigger required error
-    4 - Below min will be invalid
-    131 - Above max will be invalid
-    "abc" - Non-numeric will be invalid
+$250, $9000.50 – Other valid currency formats
 
-4. FORM SUBMISSION:
-    Submit with all valid fields will be Success
-    Submit with 1+ invalid fields, form should not submit, browser displays validation messages
+INVALID OUTPUTS:
+
+abc, 1000$, or empty – Incorrect formatting or missing symbol
+
+Negative values (if not allowed in logic)
+
+2. FIELD: Deposit Button
+Requirement: Required – initiates the deposit process (static version only displays button).
+Button must be green, full-width, with white bold text and consistent padding.
+
+VALID LABELS:
+
+"Deposit" – Clearly labeled for action
+
+Correctly styled with background-color: #28a745
+
+INVALID LABELS/STYLES:
+
+Empty label or wrong color styling (e.g., not green)
+
+Button not full width or inconsistent padding
+
+3. FIELD: Withdraw Button
+Requirement: Required – initiates the withdrawal process (static version only displays button).
+Button must be red, full-width, with white bold text and same styling as deposit button.
+
+VALID LABELS:
+
+"Withdraw" – Properly named and styled
+
+background-color: #dc3545
+
+INVALID LABELS/STYLES:
+
+No label or incorrect color
+
+Misaligned or incorrectly styled button
+
+4. FORM DISPLAY:
+Card should be centered both horizontally and vertically on all screen sizes.
+The layout must remain responsive and visually balanced. Balance and buttons should be aligned inside the white card.
+
+Submit button not present – instead, user actions are represented as UI buttons (Deposit, Withdraw).
+Static display must function visually even without backend interaction.
 
 CSS Styling Breakdown: A Structured Overview
-Here's a breakdown of the CSS styles, organized by the element they target and their purpose:
-
 1. ELEMENT: body (Page Background)
-    Purpose: Sets the overall background of the web page.
-    Property: background-color: #65cbea5b;
-    Effect: Applies a subtle, semi-transparent light blue-green color to the entire page, setting the initial visual tone.
-    Property: margin-top: 30vh; 
-    Effect: Applies a top margin equal to 30% of the viewport's height. This means the element will be pushed down from the top of 
-    the browser window by a distance that scales with the user's screen height.
+Purpose: Sets the overall background of the web page.
+Property: background-color: #efefef;
+Effect: Applies a subtle light gray background to soften the visual appearance.
+Property: display: flex; justify-content: center; align-items: center; height: 100vh;
+Effect: Centers the card on the page both vertically and horizontally using Flexbox.
 
-2. ELEMENT: .form-container (Main Form Wrapper)
-    Purpose: Styles the main box containing all form elements.
-    Properties & Effects:
-    background-color: #ffffff;: Makes the container a clean white box.
-    margin: 40px auto;: Horizontally centers the form on the page and provides 40px space top/bottom.
-    padding: 20px 30px;: Adds internal spacing (20px vertical, 30px horizontal) for content readability.
-    border-radius: 8px;: Creates rounded corners for a softer look.
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);: Applies a soft, subtle shadow, making the form appear slightly raised.
-    max-width: 480px;: Ensures the form doesn't become too wide on large screens, improving aesthetics and readability.
+2. ELEMENT: .container (Main Wrapper)
+Purpose: Wraps the .card component.
+Properties & Effects:
+display: flex; justify-content: center; align-items: center;: Keeps the card centered.
+width: 100%; padding: 20px;: Adds space on all sides for responsiveness.
 
-3. ELEMENT: .form-header (Form Title Section)
-    Purpose: Styles the heading and introductory text of the form.
+3. ELEMENT: .card (Main Banking Box)
+Purpose: Styles the main box containing the balance and buttons.
+Properties & Effects:
 
-    Property: text-align: center;
-    Effect: Centers the text content within this section.
+background-color: #ffffff;: Clean white card
 
-4. ELEMENT: .form-group (Label-Input Pairs)
-    Purpose: Creates visual separation between each label-input field set.
+padding: 40px 30px;: Internal spacing for readability
 
-    Property: margin-bottom: 20px;
-    Effect: Adds 20 pixels of space below each form group, preventing clutter and enhancing readability.
+border-radius: 12px;: Rounded corners
 
-5. ELEMENT: .form-group input (Input Fields within Form Groups)
-    Purpose: Styles all text input fields within the form.
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);: Light shadow for elevation
 
-    Properties & Effects:
+max-width: 300px;: Limits width for aesthetics
 
-    width: 100%;: Makes input fields span the full width of their parent container.
-    padding: 10px 0px;: Adds internal vertical padding (10px top/bottom) for comfortable text display.
-    border: 1px solid #dddddd;: Defines a subtle 1-pixel light gray border.
-    border-radius: 5px;: Gives input fields slightly rounded corners.
-    font-size: 17px;: Sets the text size inside the input fields for comfortable reading.
+width: 100%;: Ensures responsiveness
 
-6. ELEMENT: .btn-submit (Submit Button)
-    Purpose: Styles the main "Register" submission button.
+text-align: center;: Centers inner content
 
-    Properties & Effects:
+4. ELEMENT: .balance (Balance Display)
+Purpose: Displays the current balance of the user.
+Property: font-size: 2rem;
+Effect: Increases font size for visibility
+Property: font-weight: bold;
+Effect: Makes the balance text prominent
+Property: color: green;
+Effect: Symbolizes available/positive balance
+Property: margin-bottom: 30px;
+Effect: Adds space between balance and buttons
 
-    width: 100%;: Makes the button span the full width of its container.
-    padding: 12px;: Provides ample internal spacing for easy clicking and centered text.
-    background-color: #4a90e2;: Sets a vibrant blue background for high visibility.
-    color: white;: Makes the button text white for good contrast.
-    border: none;: Removes any default browser borders for a cleaner look.
-    border-radius: 5px;: Applies rounded corners, consistent with input fields.
-    font-size: 20px;: Increases the text size on the button, making it prominent.
-    margin-top: 10px;: Adds 10 pixels of space above the button, separating it from the last input.
+5. ELEMENT: .btn (Buttons Common Styling)
+Purpose: Styles all buttons inside the form.
+Properties & Effects:
+
+width: 100%;: Full-width buttons
+
+padding: 15px;: Comfortable touch area
+
+font-size: 1rem; font-weight: bold;: Readable and strong appearance
+
+border: none;: Removes browser default
+
+border-radius: 6px;: Slightly rounded edges
+
+margin: 10px 0;: Vertical spacing between buttons
+
+cursor: pointer;: Indicates clickable action
+
+6. ELEMENT: .deposit (Deposit Button)
+Purpose: Styles the green deposit button.
+Properties & Effects:
+
+background-color: #28a745;: Bright green for positive action
+
+color: white;: Good contrast for readability
+
+7. ELEMENT: .withdraw (Withdraw Button)
+Purpose: Styles the red withdraw button.
+Properties & Effects:
+
+background-color: #dc3545;: Red signifies deduction
+
+color: white;: Clear visibility
 
 LEARNING OUTCOMES:
-1.How to create a student registration form
-2.Learnt how to use html 5 validations.
-3.How to run test cases for the student registration form.
+How to create a responsive bank UI layout using HTML and CSS.
+
+Learnt how to use Flexbox and card-based design to center and structure content responsively.
+
+How to style action buttons (Deposit/Withdraw) with consistent width, padding, and color logic for user guidance.
+
+Understood how to test static UI elements and validate layout consistency across devices.
