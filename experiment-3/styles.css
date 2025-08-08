@@ -6,6 +6,7 @@
   
   body {
     font-family: Arial, sans-serif;
+
   }
   
   .dashboard-container {
@@ -106,4 +107,5 @@
   #theme-toggle:checked ~ .dashboard-container .dashboard aside a {
     color: #b19cd9;
   }
+  
   

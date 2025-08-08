@@ -1,0 +1,105 @@
+RESPONSIVE ADMIN DASHBOARD TEST CASES & VALIDATIONS
+
+1. FIELD: Theme Toggle
+Requirement: Required to be visible on load; allows switching between Light and Dark modes. Must be positioned at the top-right of the dashboard, styled as a small white button with rounded corners and padding. Dark mode should apply consistent background and text colors across all sections (header, sidebar, main, footer).
+VALID OUTPUTS:
+
+Light Mode: White main content background, light gray sidebar, green header/footer (#4caf50), purple links in sidebar.
+
+Dark Mode: Dark main content (#1e1e1e), dark sidebar (#2c2c2c), header/footer in #2e2e2e, links in light lavender (#b19cd9).
+INVALID OUTPUTS:
+
+Toggle hidden or misplaced
+
+Theme colors not applied consistently
+
+Text illegible due to color mismatch
+
+2. SECTION: Header
+Requirement: Full-width top section labeled “Admin Dashboard.” In light mode: green background (#4caf50) with white text; in dark mode: #2e2e2e background with white text.
+VALID OUTPUTS: Title clearly visible, aligned left or center, correct background and text colors.
+INVALID OUTPUTS: Incorrect colors, missing label, or text blending with background.
+
+3. SECTION: Sidebar Navigation
+Requirement: Displays vertical list of navigation links (“Home,” “Users,” “Settings”). Background and text colors must adjust according to theme.
+VALID OUTPUTS:
+
+Light Mode: Light gray sidebar background, purple links.
+
+Dark Mode: Dark sidebar background, lavender links.
+INVALID OUTPUTS: Links hard to read, incorrect colors, or layout broken on smaller screens.
+
+4. SECTION: Main Content Area
+Requirement: Displays “Welcome, Admin!” and a paragraph. Background and text colors must adjust with theme toggle. Should expand to fill available space next to sidebar.
+VALID OUTPUTS: Readable text, consistent padding, correct background and text colors in both modes.
+INVALID OUTPUTS: Content overflowing, incorrect theme colors, or misalignment.
+
+5. SECTION: Footer
+Requirement: Full-width bottom section with © 2025 Admin Panel text. Matches header background color for both light and dark modes.
+VALID OUTPUTS: Centered text, correct height, and color consistency.
+INVALID OUTPUTS: Misaligned footer, mismatched colors, missing text.
+
+6. LAYOUT & RESPONSIVENESS
+Requirement: Dashboard must use CSS Grid with the layout:
+
+header header  
+sidebar main  
+footer footer
+Sidebar fixed at 200px width, main section responsive. Layout must remain intact across all screen sizes.
+VALID OUTPUTS: No overlapping, consistent spacing, grid alignment maintained on all devices.
+INVALID OUTPUTS: Sections overlapping, grid breaking on small screens.
+
+CSS Styling Breakdown: A Structured Overview
+
+1. ELEMENT: body (Base Page)
+
+Purpose: Sets global font and ensures default styling.
+
+Properties:
+
+font-family: Arial, sans-serif; for clean text.
+
+2. ELEMENT: .dashboard (Main Layout)
+
+Purpose: Grid container for all sections.
+
+Properties:
+
+display: grid; grid-template-areas: defines placement.
+
+grid-template-columns: 200px 1fr; grid-template-rows: auto 1fr auto; sets structure.
+
+3. ELEMENT: .toggle (Theme Switch Button)
+
+Purpose: Lets user switch between light/dark mode.
+
+Properties: Positioned absolutely, white background, padding, rounded corners, cursor pointer.
+
+4. ELEMENT: header & footer
+
+Purpose: Top and bottom visual anchors.
+
+Properties: Green background in light mode, dark gray in dark mode, white text, padding for spacing.
+
+5. ELEMENT: aside (Sidebar)
+
+Purpose: Holds navigation menu.
+
+Properties: Background changes with theme, padding, list-style removed, links styled per theme.
+
+6. ELEMENT: main (Main Content)
+
+Purpose: Displays dashboard content.
+
+Properties: Background and text color change per theme, padding for spacing.
+
+LEARNING OUTCOMES:
+
+How to structure an admin dashboard using CSS Grid for a header, sidebar, main content, and footer.
+
+How to implement a theme toggle with a hidden checkbox and sibling selectors in CSS.
+
+How to apply consistent color schemes and link styles across light and dark modes.
+
+How to ensure responsive, stable layouts across different devices and screen sizes.
+
