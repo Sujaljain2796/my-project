@@ -1,0 +1,52 @@
+Title
+Live Character Counter for Textarea
+
+Objective
+Create a simple feature that displays a live character count as the user types in a textarea. This helps practice real-time event handling and dynamic content updates to improve user interaction.
+
+Task Description
+
+FIELD: Textarea (User Input)
+
+Requirement: 
+1. Required means it cannot be empty if user intends to count characters.
+2. Accepts any characters (letters, numbers, symbols, spaces).
+3. Character counter should update dynamically with every keystroke.
+
+Valid Inputs:
+1. "Hello" → Counter displays 5
+2. "Hello World!" → Counter displays 12
+3. "12345" → Counter displays 5
+
+Invalid Cases (Edge behavior):
+1. Empty input ("") → Counter should display 0
+2. Deleting all characters → Counter updates back to 0
+3. Pasting long text → Counter should immediately show correct length
+
+Form Submission Behavior
+Not applicable here (since no form submission), but real-time validation occurs while typing.
+
+
+CSS Styling Breakdown
+1. ELEMENT: body (Page Background)
+2. Display: flex; justify-content: center; align-items: center; → Centers the container in the viewport.
+3. Background: #f9f9f9; → Applies a light gray background.
+4. ELEMENT: .container (Main Wrapper)
+5. Background: #fff; → White background for contrast.
+6. Padding: 15px; border-radius: 8px; box-shadow: ...; → Clean card-like design.
+7. Width: 300px; text-align: center; → Keeps it compact and centered.
+
+ELEMENT: textarea (Input Area)
+1. Full width, fixed height.
+2. Light border + rounded corners for usability.
+3. Resize: none; prevents resizing for consistency.
+
+ELEMENT: p (Character Counter Display)
+1. Small margin for spacing.
+2. Slightly smaller font for a clean look.
+
+Learning Outcomes
+1. How to implement a real-time event listener (input) in JavaScript.
+2. How to dynamically update HTML content using DOM manipulation (textContent).
+3. How to style a simple interactive UI component using CSS.
+4. How to test and validate real-time features with different input cases.

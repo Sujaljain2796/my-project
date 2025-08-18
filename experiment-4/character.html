@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Live Character Counter</h3>
+  <textarea id="text" placeholder="Start typing..." oninput="countChars()"></textarea>
+  <p><b>Characters:</b> <span id="count">0</span></p>
+
+  <script>
+    function countChars() {
+      document.getElementById("count").innerText =
+        document.getElementById("text").value.length;
+    }
+  </script>
+</body>
+</html>
