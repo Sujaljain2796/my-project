@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SVG Drawing Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    #canvas {
+      border: 1px solid #333;
+      background: #f9f9f9;
+      width: 500px;
+      height: 400px;
+      cursor: crosshair;
+    }
+  </style>
+</head>
+<body>
+  <h3>SVG Drawing Tool</h3>
+  <svg id="canvas"></svg>
+
+  <script>
+    const svg = document.getElementById("canvas");
+    let drawing = false;
+    let path;
+
+    function getPoint(evt) {
+      const rect = svg.getBoundingClientRect();
+      return {
+        x: evt.clientX - rect.left,
+        y: evt.clientY - rect.top
+      };
+    }
+
+    svg.addEventListener("mousedown", (e) => {
+      drawing = true;
+      const pt = getPoint(e);
+      path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("stroke", "blue");
+      path.setAttribute("stroke-width", 2);
+      path.setAttribute("fill", "none");
+      // ✅ corrected string interpolation with backticks
+      path.setAttribute("d", `M${pt.x},${pt.y}`);
+      svg.appendChild(path);
+    });
+
+    svg.addEventListener("mousemove", (e) => {
+      if (!drawing) return;
+      const pt = getPoint(e);
+      path.setAttribute("d", path.getAttribute("d") + ` L${pt.x},${pt.y}`);
+    });
+
+    svg.addEventListener("mouseup", () => {
+      drawing = false;
+    });
+
+    svg.addEventListener("mouseleave", () => {
+      drawing = false;
+    });
+  </script>
+</body>
+</html>

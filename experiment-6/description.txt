@@ -1,0 +1,50 @@
+Title
+Interactive SVG Drawing Tool with Mouse Event Handlers
+
+Objective
+Build a web-based interactive drawing tool where users can draw freely inside an SVG canvas using mouse events. This project helps practice JavaScript DOM manipulation, SVG element creation, and advanced event handling for real-time graphics.
+
+Task Description
+FIELD: SVG Canvas (Drawing Area)
+
+Requirement:
+1. An SVG element acts as a drawing board.
+2. When the user clicks and drags (mousedown → mousemove → mouseup), a path is created dynamically.
+3. Drawing follows the cursor, updating the path in real time.
+4. Releasing the mouse (mouseup or leaving the canvas) ends the current drawing.
+5. Multiple paths can be drawn by repeating the action.
+6. All drawing must happen dynamically in JavaScript, without reloading the page.
+
+Valid Inputs & Outputs
+1. Click + Drag on SVG → Blue stroke path is drawn following mouse movement.
+           Example: Writing text or doodling inside the canvas.
+2. Release mouse → Drawing stops, path remains.
+3. Move mouse without holding click → No drawing occurs.
+
+Edge Behavior (Invalid/Boundary Cases)
+1. Click but don’t move → A single dot/point (path with no length).
+2. Mouse leaves canvas while drawing → Drawing stops automatically.
+3. Empty canvas initially → No paths until user interacts.
+
+CSS Styling Breakdown
+1. ELEMENT: body
+2. Font: Arial, sans-serif for readability.
+3. Text centered with margin spacing.
+
+ELEMENT: #canvas (SVG Drawing Board)
+1. border: 1px solid #333 → Defines drawing area clearly.
+2. background: #f9f9f9 → Light gray canvas background.
+3. Fixed size: 500px × 400px.
+4. cursor: crosshair → Indicates drawing mode.
+
+ELEMENT: path (Drawn Lines)
+1. Stroke color: Blue.
+2. Stroke width: 2px.
+3. fill: none ensures only lines are visible, not filled shapes.
+
+Learning Outcomes
+1. Mouse Event Handling – Using mousedown, mousemove, mouseup, and mouseleave.
+2. SVG Manipulation – Creating and updating <path> dynamically with setAttribute.
+3. Coordinate Calculation – Getting mouse position relative to the SVG with getBoundingClientRect().
+4. State Management – Toggling a drawing flag to control when drawing is active.
+5. Real-Time Graphics – Building interactive UI components without external libraries.
