@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import ProductCard from './components/ProductCard';
 
 function App() {
-  const products = [
+  const products = [ 
     { name: 'Wireless Mouse', price: '25.99', status: 'In Stock' },
     { name: 'Keyboard', price: '45.5', status: 'Out of Stock' },
     { name: 'Monitor', price: '199.99', status: 'In Stock' },
