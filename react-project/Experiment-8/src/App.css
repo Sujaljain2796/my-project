@@ -40,7 +40,7 @@ footer {
 .products-container {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: center;  
   align-items: flex-start;
   flex-wrap: wrap;
   padding: 20px;
