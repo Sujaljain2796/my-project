@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
-  "start": "node Experiment11.js",
-  "employer": "node employeeManagement.js",
-  "booking": "node ticketBooking.js"
-},
+  "scripts": {
+    "start": "node Experiment11.js",
+    "employer": "node employeeManagement.js",
+    "booking": "node ticketBooking.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

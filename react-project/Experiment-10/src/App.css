@@ -1,0 +1,57 @@
+.app {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #121212; /* dark background */
+  color: #fff; /* default text color white */
+}
+
+.student-form {
+  margin-bottom: 20px;
+}
+
+.student-form input {
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #222;
+  color: #fff;
+}
+
+.student-form button {
+  padding: 8px 15px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background-color: #444;
+  color: #fff;
+}
+
+.card-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #1e1e1e;
+  padding: 15px;
+  border-radius: 8px;
+  width: 150px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+  color: #fff; /* make text inside visible */
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #ffcc00; /* highlight student name */
+}
+
+.card p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #ccc; /* readable gray */
+}
